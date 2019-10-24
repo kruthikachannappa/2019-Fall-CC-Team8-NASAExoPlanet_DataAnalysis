@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Think & Rethink</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Exo+2|Pacifico" rel="stylesheet">
+
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark navbar-custom bg-dark ">
+  <a class="navbar-brand" href="#" style="font-size: 2rem;">
+    <img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg" width="50" height="50" class="d-inline-block align-top"  alt=""> Explore-Exoplanet
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav nav-right">
+      <a id="home-navbar" class="nav-item nav-link" (click)="backToHome()">Home</a>
+      <a id="services-navbar" class="nav-item nav-link" (click)="dashboard()">Dashboard</a>
+    </div>
+  </div>
+</nav>
+</body>
+</html>
+<router-outlet></router-outlet>
