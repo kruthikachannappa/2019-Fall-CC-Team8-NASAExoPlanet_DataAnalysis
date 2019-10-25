@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark navbar-custom bg-dark ">
+  <a class="navbar-brand" href="#" style="font-size: 2rem;">
+    <img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg" width="50" height="50" class="d-inline-block align-top"  alt=""> Explore-Exoplanet
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav nav-right" style="margin-left: 40vw;">
+      <a id="home-navbar" class="nav-item nav-link cursor-pointer" [class.active]="tabClick === 'Home'"  (click)="navClick('Home')">Home</a>
+      <a id="catalog-navbar" class="nav-item nav-link cursor-pointer" [class.active]="tabClick === 'Catalog'" (click)="navClick('Catalog')">Catalog</a>
+      <a id="dashboard-navbar" class="nav-item nav-link cursor-pointer" [class.active]="tabClick === 'Dashboard'" (click)="navClick('Dashboard')">Dashboard</a>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+</body>
+</html>
+

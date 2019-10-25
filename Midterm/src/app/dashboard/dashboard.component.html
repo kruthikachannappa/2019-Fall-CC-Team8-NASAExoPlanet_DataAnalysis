@@ -1,0 +1,21 @@
+<div class="container-fluid no-padding" style="width: 97.8%;margin-top: 4.5vw;">
+  <div class="row">
+    <!--side nav bar for swtching between subcategories-->
+    <nav class="col-lg-3 col-md-3 col-sm-9 leftbar" id="Business">
+      <ul class="nav nav-pills flex-column font-2 text-right">
+        <li class="nav-item cursor-pointer">
+          <a class="nav-link left-link active" (click)="temperature()" >Temperature</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="col-lg-9 col-md-9 col-sm-9 ">
+      <!--div for subcategory - Finance-->
+      <div id="dev-sec-1" class="box-height-1 showBlock personal-development" >
+        <h1 class="text-center" ></h1><br><br>
+        <div class="row col-lg-12 col-md-12 col-sm-12">
+          <div *ngIf="items.length != 0" id="first-chart" style="width:90%; height:400px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
