@@ -25,15 +25,24 @@ export class CatalogComponent implements OnInit {
     return img;
   }
   ngOnInit() {
-    this.api.getConfirmedPlanets()
+    if (this.api.getBulkData()) {
+      this.items = this.api.getBulkData();
+      this.items.forEach(obj => {
+        obj.img = this.generateImg();
+      });
+    } else {
+      this.api.getConfirmedPlanets()
         .subscribe(res => {
           this.items = res;
           this.items.forEach(obj => {
             obj.img = this.generateImg();
           });
+          console.log(this.items);
+          this.api.setBulkData(this.items);
         }, err => {
           console.log(err);
         });
+    }
   }
 }
 

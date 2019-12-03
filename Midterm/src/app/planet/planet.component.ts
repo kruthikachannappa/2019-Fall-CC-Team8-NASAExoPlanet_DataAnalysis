@@ -8,7 +8,7 @@ import {ApiService} from '../api.service';
 export class PlanetComponent implements OnInit {
 
   constructor(private api: ApiService) { }
-  private planet = [];
+  public planet = [];
   ngOnInit() {
     console.log('In planet');
     this.planet.push(this.api.getData());

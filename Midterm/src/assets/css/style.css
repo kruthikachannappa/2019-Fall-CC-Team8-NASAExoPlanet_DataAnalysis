@@ -62,7 +62,7 @@ h2 {
 }
 .planet-container{
   margin-top: 8vw;
-  height: 35vw;
+  height: 38vw;
   width: 75vw;
   margin-left: 15vw !important;
   background-color: #52606561;
@@ -71,6 +71,24 @@ h2 {
   margin: 18vw;
   color: snow;
 }
+
+.planet tr {
+  width: 100%;
+  display: inline-table;
+  table-layout: fixed;
+}
+
+.planet table{
+  height: 30vw;
+display: -moz-groupbox;
+}
+.planet tbody{
+  overflow-y: scroll;
+  height: 30vw;
+  width: 94.5%;
+  position: absolute;
+}
+
 .margin-right-1{margin-right:1vw;}
 .margin-left-2{margin-left: 2vw;}
 .personal-development h1{ color:#d0f992;}
@@ -90,9 +108,10 @@ h2 {
 .showBlock{display:block;}
 /*.nav-pills {position: fixed;padding-left: 13rem;}*/
 .no-padding{padding:0 0  !important;}
-.leftbar{background:#2a344ac9;}
+.leftbar{background:#2a344ac9;height: 43.5vw;}
 .nav-pills .nav-link.active {background-color: unset !important;}
 .font-2{font-size: 2vw;}
+.font-1{font-size: 1.5vw;}
 .margin-top-2{margin-top:2vw;}
 .margin-right-2{margin-right: 2vw;}
 .margin-left-8{margin-left: 8vw;}

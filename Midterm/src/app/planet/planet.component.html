@@ -2,60 +2,64 @@
   <div class="col-lg-5 col-md-5 col-sm-5 text-center margin-top-2">
     <img class="card-img-top planet-img" src="{{planet[0].img}}" alt="Card image cap">
   </div>
-  <div class="col-lg-7 col-md-7 col-sm-7 text-center margin-top-2">
-    <h1>{{planet[0].pl_hostname}}</h1>
-    <table class="planet-table">
-      <tr>
+  <div class="col-lg-7 col-md-7 col-sm-7 text-center margin-top-2 planet">
+    <h1>{{planet[0].fpl_hostname}}</h1>
+    <table class="planet-table table-striped .table-hover">
+      <tr *ngIf="planet[0].fpl_discmethod">
         <td>Discovery Method</td>
-        <td>{{planet[0].pl_discmethod}}</td>
+        <td>{{planet[0].fpl_discmethod}}</td>
       </tr>
-      <tr>
+      <tr *ngIf="planet[0].fpl_facility">
         <td>Facility</td>
-        <td>{{planet[0].pl_facility}}</td>
+        <td>{{planet[0].fpl_facility}}</td>
       </tr>
-      <tr *ngIf="planet[0].pl_orbper">
+      <tr *ngIf="planet[0].fpl_orbper">
         <td>Revolution Period (Days)</td>
-        <td>{{planet[0].pl_orbper}}</td>
+        <td>{{planet[0].fpl_orbper}}</td>
       </tr>
-      <tr *ngIf="planet[0].st_teff">
+      <tr *ngIf="planet[0].fpl_dens">
+        <td>Density (g/cm**3)</td>
+        <td>{{planet[0].fpl_dens}}</td>
+      </tr>
+      <tr *ngIf="planet[0].fpl_eqt">
         <td>Temperature (K)</td>
-        <td>{{planet[0].st_teff}}</td>
+        <td>{{planet[0].fpl_eqt}}</td>
       </tr>
-      <tr *ngIf="planet[0].pl_masse">
+      <tr *ngIf="planet[0].fpl_bmasse">
         <td>Mass</td>
-        <td>{{planet[0].pl_masse+'*Earth'}}</td>
+        <td>{{planet[0].fpl_bmasse+' *Earth'}}</td>
       </tr>
-      <tr *ngIf="planet[0].st_dist">
+      <tr *ngIf="planet[0].fst_dist">
         <td>Distance (LY)</td>
-        <td>{{planet[0].st_dist * 3.26}}</td>
+        <td>{{planet[0].fst_dist * 3.26}}</td>
       </tr>
-      <tr *ngIf="planet[0].pl_bmassj">
+      <tr *ngIf="planet[0].fpl_bmassj">
         <td>Mass</td>
-        <td>{{planet[0].pl_bmassj+'*Jupiter'}}</td>
+        <td>{{planet[0].fpl_bmassj+' *Jupiter'}}</td>
       </tr>
-      <tr *ngIf="planet[0].pl_rade">
+      <tr *ngIf="planet[0].fpl_rade">
         <td>Radius</td>
-        <td>{{planet[0].pl_rade}}</td>
+        <td>{{planet[0].fpl_rade +' *Earth'}}</td>
       </tr>
-      <tr *ngIf="planet[0].pl_disc">
+      <tr *ngIf="planet[0].fpl_disc">
         <td>Year of Discovery</td>
-        <td>{{planet[0].pl_disc}}</td>
+        <td>{{planet[0].fpl_disc}}</td>
       </tr>
-      <tr *ngIf="planet[0].pl_mnum">
+      <tr *ngIf="planet[0].fpl_mnum">
         <td>No. of Moons</td>
-        <td>{{planet[0].pl_mnum}}</td>
+        <td>{{planet[0].fpl_mnum}}</td>
       </tr>
-      <tr *ngIf="planet[0].st_logg">
-        <td>Surface Gravity</td>
-        <td>{{planet[0].st_logg}}</td>
+      <tr *ngIf="planet[0].fst_logg">
+        <td>Surface Gravity (cm/s**2)</td>
+        <td>{{planet[0].fst_logg}}</td>
       </tr>
-      <tr *ngIf="planet[0].st_metratio">
+      <tr *ngIf="planet[0].fst_metratio">
         <td>Metal Content</td>
-        <td>{{planet[0].st_metratio}}</td>
+        <td>{{planet[0].fst_metratio}}</td>
       </tr>
-      <tr *ngIf="planet[0].st_age">
-        <td>Age of planet</td>
-        <td>{{planet[0].st_age}}</td>
+      <tr *ngIf="planet[0].fst_age">
+        <td>Age of planet (Gy)</td>
+        <td>{{planet[0].fst_age}}</td>
       </tr>
 
     </table>

@@ -13,6 +13,7 @@ const httpOptions = {
 export class ApiService {
 
   private routerData : any;
+  private bulkData : any;
   private confirmData = [];
   private apiKey = '&api_key=ofVrVVbDilF0ziVtYyyLWdorl7M9SI2W6tzeSFf4';
   constructor(private http: HttpClient) {
@@ -43,6 +44,12 @@ export class ApiService {
   getData() {
     return this.routerData;
   }
+  setBulkData(data) {
+    this.bulkData = data;
+  }
+  getBulkData() {
+    return this.bulkData;
+  }
   getConfirmedData() {
     if(JSON.parse(localStorage.getItem('confirmedPlanet'))){
       this.confirmData = JSON.parse(localStorage.getItem('confirmedPlanet'));
@@ -52,13 +59,15 @@ export class ApiService {
     return this.confirmData;
   }
   getConfirmedPlanets(): Observable<any> {
-    const apiurl = 'https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&' +
-      '&order=dec&format=json' + this.apiKey;
-    /*const dataUrl = '../assets/data/confirmed.json';
-    return this.http.get(dataUrl);*/
-    return this.http.get(apiurl, httpOptions).pipe(
+    /*const apiurl = 'https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&' +
+      '&order=dec&format=json' + this.apiKey;*/
+    /*const apiurl = 'https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=compositepars&' +
+      '&order=dec&format=json' + this.apiKey;*/
+    const dataUrl = '../assets/data/composite-less.json';
+    return this.http.get(dataUrl);
+    /*return this.http.get(apiurl, httpOptions).pipe(
       map(this.extractData),
-      catchError(this.handleError));
+      catchError(this.handleError));*/
   }
 
 }

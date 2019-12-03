@@ -1,19 +1,103 @@
 <div class="container-fluid no-padding" style="width: 97.8%;margin-top: 4.5vw;">
-  <div class="row">
+  <div class="row text center"  [hidden]="items.length!=0"><!---->
+    <div style="height:90vh;background-color: white;
+    width: -webkit-fill-available;">
+      <img src="../../assets/img/load.gif" style="padding-left: 22vw;
+    padding-top: 8vw;">
+    </div>
+
+  </div>
+  <div class="row" [hidden]="items.length==0">
     <!--side nav bar for swtching between subcategories-->
-    <nav class="col-lg-3 col-md-3 col-sm-9 leftbar" id="Business">
-      <ul class="nav nav-pills flex-column font-2 text-right">
+    <nav class="col-lg-3 col-md-3 col-sm-3 leftbar" id="Business">
+      <ul class="nav nav-pills flex-column font-1 text-right">
         <li class="nav-item cursor-pointer">
-          <a class="nav-link left-link active" (click)="temperature()" >Temperature</a>
+          <a class="nav-link left-link " [class.active]="tabClick === 'temperature'" (click)="graph('temperature')" >Temperature</a>
+        </li>
+        <li class="nav-item cursor-pointer">
+          <a class="nav-link left-link " [class.active]="tabClick === 'mass'" (click)="graph('mass')" >Mass</a>
+        </li>
+        <li class="nav-item cursor-pointer">
+          <a class="nav-link left-link " [class.active]="tabClick === 'metallicity'" (click)="graph('metallicity')" >Metallicity</a>
+        </li>
+        <li class="nav-item cursor-pointer">
+          <a class="nav-link left-link " [class.active]="tabClick === 'insolation'" (click)="graph('insolation')" >Insolation</a>
+        </li>
+        <li class="nav-item cursor-pointer">
+          <a class="nav-link left-link " [class.active]="tabClick === 'density'" (click)="graph('density')" >Density</a>
+        </li>
+        <li class="nav-item cursor-pointer">
+          <a class="nav-link left-link " [class.active]="tabClick === 'luminosity'" (click)="graph('luminosity')" >Luminosity</a>
+        </li>
+        <li class="nav-item cursor-pointer">
+          <a class="nav-link left-link " [class.active]="tabClick === 'gravity'" (click)="graph('gravity')" >Gravity</a>
+        </li>
+        <li class="nav-item cursor-pointer">
+          <a class="nav-link left-link " [class.active]="tabClick === 'discovery'" (click)="graph('discovery')" >Discovery</a>
         </li>
       </ul>
     </nav>
-    <div class="col-lg-9 col-md-9 col-sm-9 ">
-      <!--div for subcategory - Finance-->
+    <div class="col-lg-9 col-md-9 col-sm-9 " [hidden]="tabClick != 'temperature'">
       <div id="dev-sec-1" class="box-height-1 showBlock personal-development" >
         <h1 class="text-center" ></h1><br><br>
         <div class="row col-lg-12 col-md-12 col-sm-12">
-          <div *ngIf="items.length != 0" id="first-chart" style="width:90%; height:400px;"></div>
+          <div id="first-chart" style="width:95%; height:500px;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-9 " [hidden]="tabClick != 'mass'">
+      <div id="dev-sec-2" class="box-height-1 showBlock personal-development" >
+        <h1 class="text-center" ></h1><br><br>
+        <div class="row col-lg-12 col-md-12 col-sm-12">
+          <div  id="second-chart" style="width:95%; height:500px;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-9 " [hidden]="tabClick != 'metallicity'">
+      <div id="dev-sec-3" class="box-height-1 showBlock personal-development" >
+        <h1 class="text-center" ></h1><br><br>
+        <div class="row col-lg-12 col-md-12 col-sm-12">
+          <div id="third-chart" style="width:95%; height:500px;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-9 " [hidden]="tabClick != 'insolation'">
+      <div id="dev-sec-4" class="box-height-1 showBlock personal-development" >
+        <h1 class="text-center" ></h1><br>
+        <div class="row col-lg-12 col-md-12 col-sm-12">
+          <div id="fourth-chart" style="width:95%; height:500px;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-9 " [hidden]="tabClick != 'density'">
+      <div id="dev-sec-5" class="box-height-1 showBlock personal-development" >
+        <h1 class="text-center" ></h1><br>
+        <div class="row col-lg-12 col-md-12 col-sm-12">
+          <div id="fifth-chart" style="width:95%; height:500px;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-9 " [hidden]="tabClick != 'luminosity'">
+      <div id="dev-sec-6" class="box-height-1 showBlock personal-development" >
+        <h1 class="text-center" ></h1><br>
+        <div class="row col-lg-12 col-md-12 col-sm-12">
+          <div id="sixth-chart" style="width:95%; height:500px;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-9 " [hidden]="tabClick != 'gravity'">
+      <div id="dev-sec-7" class="box-height-1 showBlock personal-development" >
+        <h1 class="text-center" ></h1><br>
+        <div class="row col-lg-12 col-md-12 col-sm-12">
+          <div id="seventh-chart" style="width:95%; height:500px;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-9 " [hidden]="tabClick != 'discovery'">
+      <div id="dev-sec-8" class="box-height-1 showBlock personal-development" >
+        <h1 class="text-center" ></h1><br>
+        <div class="row col-lg-12 col-md-12 col-sm-12">
+          <div id="eight-chart" style="width:95%; height:500px;"></div>
         </div>
       </div>
     </div>
